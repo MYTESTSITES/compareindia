@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/vipin', function () {
+    return "hi vipin";
+});
+
+Route::get('/admin', 'AdminController@index');
+
+Route::get('/admin/{string}', 'AdminController@print')->where(['string'=>"[a-z]+"]);
