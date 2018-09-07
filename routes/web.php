@@ -16,9 +16,16 @@ Route::get('/', function () {
 });
 
 
-Route::get('/vipin', function () {
-    return "hi vipin";
-});
+// Route::get('/vipin', function () {
+//     //return "hi vipin";
+//     $title ="vipin test page";
+//     return view('vipin')->with("title",$title);
+// });
+
+Route::get('/vipin', 'VipinController@getVipin')->name('vipin');
+
+Route::resource('products', 'ProductController');
+//Route::resource('new', 'ProductController');
 
 Route::get('/admin', 'AdminController@index');
 
